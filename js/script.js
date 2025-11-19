@@ -172,4 +172,4 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('load', () => {
     typeWriter();
     createParticles();
-});
+}};
