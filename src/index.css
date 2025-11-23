@@ -187,6 +187,11 @@ nav {
     box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
 }
 
+/* Hide hamburger on desktop */
+.hamburger {
+    display: none;
+}
+
 /* ========================================
    HERO SECTION - CINEMATIC OPENING
    ======================================== */
@@ -846,5 +851,68 @@ footer {
         width: 100%;
         max-width: 300px;
         justify-content: center;
+    }
+
+    /* Hamburger menu button */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        border: none;
+        background: none;
+        cursor: pointer;
+        padding: 10px;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background: var(--color-cream);
+        margin: 3px 0;
+        transition: 0.3s;
+        transform-origin: center;
+    }
+
+    .bar.open:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .bar.open:nth-child(2) {
+        opacity: 0;
+    }
+
+    .bar.open:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    /* Mobile navigation */
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: rgba(10, 10, 10, 0.95);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 50px;
+        transition: left 0.3s ease;
+        z-index: 1000;
+    }
+
+    .nav-menu.open {
+        left: 0;
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .nav-menu a {
+        font-size: 1.2rem;
     }
 }
